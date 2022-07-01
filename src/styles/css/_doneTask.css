@@ -1,0 +1,27 @@
+.done-task{
+    border-radius: 5px;
+    background: #bfbfbf;
+}
+.done-task .task{
+    border: 2px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.done-task .done-list{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.done-task .priority {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.done-task .description {
+    width: 290px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

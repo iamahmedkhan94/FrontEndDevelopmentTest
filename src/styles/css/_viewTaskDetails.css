@@ -1,0 +1,57 @@
+.viewTaskDetails {
+    border-radius: 5px;
+    background: #bfbfbf;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.viewTaskDetails .ant-card-body {
+    width: 100%;
+}
+.one{
+    position: relative;
+    height: 70px;
+}
+.one .required{
+    position:absolute;
+}
+
+.one input{
+    margin-top: 25px;
+}
+.one+.one {
+    height: 130px;
+    padding-bottom: 20px;
+}
+.one+.one textarea{
+    height: 100px;
+    margin-top: 25px;
+}
+
+
+.viewTaskDetails .buttonAction button {
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.viewTaskDetails .buttonAction {
+    text-align: center;
+}
+
+.viewTaskDetails h2 {
+    text-align: center;
+}
+
+.viewTaskDetails .description {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.viewTaskDetails .priority {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

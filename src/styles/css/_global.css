@@ -1,0 +1,45 @@
+.d-flex {
+    display: block;
+}
+
+.medium-priority-circle {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(211, 217, 95);
+    border-radius: 50%;
+}
+
+.low-priority-circle {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(80, 218, 89);
+    border-radius: 50%;
+}
+
+.high-priority-circle {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(219, 54, 54);
+    border-radius: 50%;
+}
+
+.required {
+    color: red;
+    border-color: red;
+   
+}
+/* .required.one {
+    top:0
+
+} */
+
+
+.required:hover {
+    color: red;
+    border-color: red;
+}
+.required:focus {
+    color: red;
+    border-color: red;
+    box-shadow: 0 0 0 2px rgb(255 24 75 / 20%);
+}

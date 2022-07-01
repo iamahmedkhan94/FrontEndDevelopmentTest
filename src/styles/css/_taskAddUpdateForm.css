@@ -1,0 +1,43 @@
+.taskAddUpdateForm {
+    border-radius: 50px;
+    background: #dedede;
+    width: 75%;
+    border: 1px solid black;
+}
+
+.ant-radio-group {
+display: flex;
+justify-content: space-between;
+}
+
+.btn-danger{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto ;
+    color: black !important;
+    border-color: black !important;
+    background: #ffa300 !important;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+
+}
+/* 
+.ant-btn-dangerous.ant-btn-primary{
+    color: black;
+    border-color: black;
+    background: #ffa300;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+} */
+
+::placeholder{
+    color: black !important;
+}
