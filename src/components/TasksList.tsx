@@ -5,11 +5,11 @@ import DoneTasks from './DoneTasks';
 import ViewTaskDetails from './ViewTaskDetails';
 import { PlusCircleFilled } from '@ant-design/icons';
 
-const TasksList = (props) => {
+const TasksList = (props : any) => {
 
     let { taskList, editTask, doneTasks, setTaskAddForm } = props
 
-    let priorityColors = {
+    let priorityColors : any = {
         'High': 'high-priority-circle',
         'Medium': 'medium-priority-circle',
         'Low': 'low-priority-circle'
@@ -22,19 +22,19 @@ const TasksList = (props) => {
         taskIndex: null
     })
 
-    const setViewTaskDetails = (e, bool, item, i) => {
+    const setViewTaskDetails = (e : any, bool : boolean, item : any, i : any) => {
         e.stopPropagation();
         setState((prevState) => ({
             ...prevState,
             viewTaskDetails: bool,
             task: item,
             taskIndex: i
-        }))
+        }));
     }
 
-    const setViewDoneTask = (e, bool) => {
+    const setViewDoneTask = (e :any, bool : boolean) => {
         e.stopPropagation();
-        if (taskList.filter(item => item.doneTask).length > 0) {
+        if (taskList.filter((item : any)=> item.doneTask).length > 0) {
             setState((prevState) => ({
                 ...prevState,
                 viewDoneTask: bool
@@ -54,7 +54,7 @@ const TasksList = (props) => {
                 /> :
                 <div className="task-list">
                     <Button type='primary' className='view-task-button' onClick={(e) => setViewDoneTask(e, true)}>View Done task</Button>
-                    {taskList.filter(item1 => !item1.doneTask).map((item, i) => {
+                    {taskList.filter((item1 : any) => !item1.doneTask).map((item : any, i : number) => {
                         return <Card key={i} className='task' onClick={(e) => setViewTaskDetails(e, true, item, i)}>
                             <div className='list'>
                                 <div>

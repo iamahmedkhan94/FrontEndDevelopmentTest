@@ -1,7 +1,7 @@
 .taskAddUpdateForm {
     border-radius: 50px;
     background: #dedede;
-    width: 75%;
+    width: 60%;
     border: 1px solid black;
 }
 
@@ -26,18 +26,93 @@ justify-content: space-between;
     padding-right: 70px;
 
 }
-/* 
-.ant-btn-dangerous.ant-btn-primary{
-    color: black;
-    border-color: black;
-    background: #ffa300;
-    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
-    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
-    border-radius: 5px;
-    padding-left: 70px;
-    padding-right: 70px;
-} */
 
 ::placeholder{
     color: black !important;
+}
+
+ant-radio-checked .ant-radio-inner{
+    border-color: black !important ;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+.ant-radio-checked .ant-radio-inner:after{
+    background-color: green !important;
+    border-color: green !important ;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50px;
+  }
+  
+  .ant-radio:hover .ant-radio-inner {
+    border-color: black !important;
+  }
+  .ant-radio-checked .ant-radio-inner:focus{
+    border-color: black !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-color: red;
+  }
+  .ant-radio-checked .ant-radio-inner {
+    border-color: red;
+}
+
+.ant-radio-inner::after{
+    top: -53%;
+    left: -67%
+}
+
+span.ant-radio + * {
+    padding-right: 8px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.Medium .ant-radio-checked .ant-radio-inner:after{
+    background-color: yellow !important;
+    border-color: yellow !important ;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50px;
+  }
+  
+  .Low .ant-radio-checked .ant-radio-inner:after{
+    background-color: green !important;
+    border-color: green !important ;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50px;
+  }
+
+  .High .ant-radio-checked .ant-radio-inner:after{
+    background-color: red !important;
+    border-color: red !important ;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50px;
+  }
+  .required {
+    color: red;
+    border-color: red;
+   
+}
+/* .required.one {
+    top:0
+
+} */
+
+
+.required:hover {
+    color: red;
+    border-color: red;
+}
+.required:focus {
+    color: red;
+    border-color: red;
+    box-shadow: 0 0 0 2px rgb(255 24 75 / 20%);
+}
+
+.main-btn{
+  text-align: center
 }

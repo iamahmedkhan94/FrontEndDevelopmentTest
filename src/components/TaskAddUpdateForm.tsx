@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Input, Radio, Button, Card } from 'antd';
 import '../styles/css/_taskAddUpdateForm.css'
+import { uuidGenerator } from '../helper/helperfunctions';
+// import { setTimeout } from 'timers/promises';
 
 const { TextArea } = Input;
 
-const TaskAddUpdateForm = (props) => {
+const TaskAddUpdateForm = (props: any) => {
 
     const { setTaskAddForm, setTaskList, data, updateTask, taskUpdateForm } = props
 
@@ -14,13 +16,14 @@ const TaskAddUpdateForm = (props) => {
             description: data.description ?? '',
             reward: data.reward ?? '',
             priority: data.priority ?? 'Low',
-            doneTask: false
+            doneTask: false,
+            id: uuidGenerator()
         }
     })
 
     const plainOptions = ['Low', 'Medium', 'High'];
 
-    const onChangeInputHandler = (e) => {
+    const onChangeInputHandler = (e: any) => {
         let value = e.target.value
         let id = e.target.id
         setState((prevState) => ({
@@ -32,7 +35,7 @@ const TaskAddUpdateForm = (props) => {
         }))
     }
 
-    const onChangeRadioHandler = (e) => {
+    const onChangeRadioHandler = (e: any) => {
         let value = e.target.value
         setState((prevState) => ({
             ...prevState,
@@ -40,7 +43,9 @@ const TaskAddUpdateForm = (props) => {
                 ...prevState.task,
                 priority: value
             }
-        }))
+        }));
+        (document.getElementById(`${state.task.priority}`) as HTMLElement).classList.add(`${value}`);
+        (document.getElementById(`${state.task.priority}`) as HTMLElement).classList.remove(`${state.task.priority}`)
     };
 
     const editTask = () => {
@@ -60,17 +65,23 @@ const TaskAddUpdateForm = (props) => {
                     description: data.description ?? '',
                     reward: data.reward ?? '',
                     priority: data.priority ?? 'Low',
-                    doneTask: false
+                    doneTask: false,
+                    id : data.id ?? null
                 }
-            }))
+            }));
         }
 
     }
 
+    // useEffect(() => {
+    //     var element =   document.getElementById(`${state?.task?.priority}`)
+    //    console.log(element.find('input') )
+    // }, [state])
+
     return (
         <Card className='taskAddUpdateForm'>
             <div className="one" >
-                {state.task.title ? '' : <span className='required ' >* required</span>}
+                {state.task.title ? '' : <span className='required' >* required</span>}
                 <Input
                     id="title"
                     className={state.task.title ? '' : 'required'}
@@ -80,7 +91,7 @@ const TaskAddUpdateForm = (props) => {
                 />
             </div>
             <div className="one">
-                {state.task.description ? '' : <span className='required '>* required</span>}
+                {state.task.description ? '' : <span className='required'>* required</span>}
                 <TextArea
                     id="description"
                     value={state.task.description}
@@ -97,10 +108,12 @@ const TaskAddUpdateForm = (props) => {
                 onChange={onChangeInputHandler}
                 placeholder="Gifts and KPI for this task ;)"
             />
-                <Radio.Group options={plainOptions} onChange={onChangeRadioHandler} value={state.task.priority} />
-            {taskUpdateForm ?
-                <Button type='primary' className='d-flex btn-danger' danger onClick={() => editTask()}>Update to Tasks</Button> :
-                <Button type='primary' className='d-flex btn-danger' danger onClick={addTask}>Add to Tasks</Button>}
+            <Radio.Group id={state.task.priority} options={plainOptions} onChange={onChangeRadioHandler} value={state.task.priority} />
+            <div className="main-btn" >
+                {taskUpdateForm ?
+                    <Button type='primary' className='d-flex btn-danger' danger onClick={() => editTask()}>Update to Tasks</Button> :
+                    <Button type='primary' className='d-flex btn-danger' danger onClick={addTask}>Add to Tasks</Button>}
+            </div>
 
         </Card>
     )

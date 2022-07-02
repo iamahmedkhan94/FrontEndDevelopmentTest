@@ -1,0 +1,9 @@
+export default {
+    // CRUD ACTIONS
+    "ADD_TASK": "ADD_TASK",
+    "UPDATE_TASK": "UPDATE_TASK",
+    "DELETE_TASK": "DELETE_TASK",
+    "DONE_TASK": "DONE_TASK",
+    "GET_TASKS": "GET_TASKS",
+    "EDIT_TASK" : "EDIT_TASK"
+}

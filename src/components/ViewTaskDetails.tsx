@@ -2,14 +2,15 @@ import React from 'react'
 import '../styles/css/_viewTaskDetails.css'
 import { Button, Card } from 'antd';
 
-const ViewTaskDetails = (props) => {
+const ViewTaskDetails = (props : any) => {
     let { task, doneTasks, editTask, taskIndex } = props
-    let priorityColors = {
+    let priorityColors : any = {
         'High': 'high-priority-circle',
         'Medium': 'medium-priority-circle',
         'Low': 'low-priority-circle'
     }
     return (
+        <div className='viewTaskDetails-Main'>
         <Card className="viewTaskDetails">
             <h2 >{task.title}</h2>
             <div className='priority'>
@@ -18,11 +19,13 @@ const ViewTaskDetails = (props) => {
             </div>
             <div className='description'>{task.description}</div>
             <div className='buttonAction'>
-                <Button type='primary' danger size='small' disabled={task.doneTask} onClick={(e) => doneTasks(e, taskIndex)}>Done Task</Button>
-                <Button type='primary' danger size='small' disabled={task.doneTask} onClick={(e) => editTask(e, task, taskIndex)}>Edit Task</Button>
-                <Button type='primary' danger size='small' disabled={task.doneTask}>Delete Task</Button>
+            <Button className='btn-edit' type='primary' danger size='small' disabled={task.doneTask} onClick={(e) => doneTasks(e, taskIndex)}>Done Task</Button>
+                    <Button className='btn-done' type='primary' danger size='small' disabled={task.doneTask} onClick={(e) => editTask(e, task, taskIndex)}>Edit Task</Button>
+                    <Button className='btn-delete' type='primary' danger size='small' disabled={task.doneTask}>Delete Task</Button>
             </div>
         </Card>
+        </div>
+
     )
 }
 

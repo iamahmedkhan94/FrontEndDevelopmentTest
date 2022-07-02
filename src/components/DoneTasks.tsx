@@ -2,16 +2,16 @@ import React from 'react'
 import { Card } from 'antd';
 import '../styles/css/_doneTask.css'
 
-const DoneTasks = (props) => {
+const DoneTasks = (props : any) => {
     let { taskList } = props
-    let priorityColors = {
+    let priorityColors : any = {
         'High': 'high-priority-circle',
         'Medium': 'medium-priority-circle',
         'Low': 'low-priority-circle'
     }
     return (
         <Card className='done-task'>
-            {taskList.filter(item1 => item1.doneTask).map((item, i) => {
+            {taskList.filter((item1 : any )=> item1.doneTask).map((item : any, i : any) => {
                 return <Card key={i} className='task'>
                     <div className='done-list'>
                         <div>
